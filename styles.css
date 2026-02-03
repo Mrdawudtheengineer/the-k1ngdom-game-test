@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Source+Sans+3:wght@400;600&display=swap');
+
+:root {
+  color-scheme: dark;
+  --gold: #d8b56c;
+  --wood: #3a2a1d;
+  --stone: #4a4a50;
+  --fog: rgba(15, 18, 24, 0.55);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: #0b0d13;
+  overflow: hidden;
+}
+
+#scene {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+#ui {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: #f3e9d1;
+}
+
+.title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 48px;
+  letter-spacing: 2px;
+  padding: 24px 32px 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.65);
+}
+
+.menu {
+  position: absolute;
+  top: 90px;
+  left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.menu-btn {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: 1px solid var(--gold);
+  background: linear-gradient(120deg, rgba(40, 24, 12, 0.85), rgba(24, 16, 10, 0.85));
+  color: #f5e8c8;
+  cursor: pointer;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-btn:hover {
+  transform: translateX(4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+#hud {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.hud-row {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--fog);
+  padding: 10px 16px;
+  border: 1px solid rgba(216, 181, 108, 0.4);
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+}
+
+.dialogue {
+  min-height: 60px;
+  max-width: 520px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--gold);
+  background: rgba(24, 18, 12, 0.8);
+  font-size: 15px;
+  line-height: 1.4;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 700px) {
+  .menu {
+    top: 76px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+}
